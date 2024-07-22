@@ -30,30 +30,7 @@ Bdiarys is a personal blog that chronicles my transition into the world of web d
 Check out the live demo [here](https://bpdiarys.com/).
 
 ### Screenshots
-
-![home page](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/homePage_bpdiarys.png)
-*home page*
-
-![mobile version ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/mobile_bpdiarys.png)
-*mobile home page version*
-
-![tablet version ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/tablette_bpdiarys.png)
-*tablet home page version*
-
-![profile page ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/Profil_page_bpdiarys.png)
-*profile page*
-
-![admin panel page ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/admin_tools_bpdiarys.png)
-*admin panel page*
-
-![favorite articles page ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/favoritesArticle_bpdiarys.png)
-*favorite articles page*
-
-![write article page ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/write-article-page_bpdiarys.png)
-*write article page*
-
-![article page ](https://github.com/Nada-TB/bpdiarys-blog-style-website/blob/main/screenshoot_bpdiarys/article_page_bpdiarys.png)
-article page*
+screenshots are available [here](https://github.com/Nada-TB/bpdiarys-blog-style-website/tree/main/screenshoot_bpdiarys)
 
 ### sitemap
 ``` plain text
