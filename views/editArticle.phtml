@@ -1,0 +1,15 @@
+<form class="write" action="index.php?action=editArticle" method="post" enctype="multipart/form-data" onsubmit="return validationFormEdition()">
+
+	<legend>Edit article</legend>
+	<input type="text" name="title" id="title" value="<?= htmlspecialchars($post['title']) ?>">
+	<span id="errorTitle" class="errorRegister"></span>
+	<input type="text" name="description" id="description" placeholder="description" value="<?= htmlentities($post['description']) ?>">
+	<span id="errorDescription" class="errorRegister"></span>
+	<input type="file" name="image" id="image" placeholder="Image" value="">
+	<span id="errorImage" class="errorRegister"></span>
+	<textarea id="content" name="content" cols="30" rows="20"><?= htmlspecialchars($post['content']) ?></textarea>
+	<span id="errorContent" class="errorRegister"></span>
+	<input type="hidden" name="postId" value="<?= intval($_GET['article']) ?>">
+	<button type="submit">update</button>
+
+</form>

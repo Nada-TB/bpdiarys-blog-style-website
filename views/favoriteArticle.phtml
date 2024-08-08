@@ -1,0 +1,33 @@
+
+<section class="tools">
+	<?php if(htmlspecialchars($_SESSION['connected'])==="connected" 
+	&& array_key_exists('error',$_GET) && htmlspecialchars($_GET['error'])==="exist") :?>
+		<p id="actionComment">article exists</p>
+	<?php endif ; ?>
+	<?php if(array_key_exists('success',$_GET)&& htmlspecialchars($_GET['success'])==='success'):?>
+		<p id="actionComment">The article has been successfully removed from your list of favorite articles.</p>
+	<?php endif;?>
+
+	<table>
+		<thead>
+			<th>Articles titles</th>
+			<th>Delete item</th>
+		</thead>
+	
+		<tbody>
+			<?php foreach ($favorites as $favorite): ?>
+				<tr>
+					<td>
+						<a href=<?=htmlentities($favorite['url'])?>> <?= htmlentities($favorite['title']) ?></a>
+					</td>
+					<td>
+						<a href="index.php?action=deleteFavorite&&favoriteId=<?= intval($favorite['id'])?>"><i class="fas fa-trash-alt"></i></a>
+					</td>
+
+				</tr>
+			<?php endforeach; ?>
+		</tbody>	
+	</table>
+
+	<a href="index.php?action=home" title="backward to home"><button>backward to home</button></a>
+</section>

@@ -1,0 +1,39 @@
+<section class="tools">
+	<table>
+		<thead>
+			<th>Articles titles</th>
+			<th>Update</th>
+			<th>Delete</th>
+			<th>status Validation</th>
+		</thead>
+		
+		<tbody>
+			<?php foreach ($articles as $article): ?>
+				<tr>
+					<td>
+						<a href="index.php?action=<?php echo 'article'?>&&article=<?=htmlentities($article['id'])?>"><?= htmlentities($article['title']) ?></a>
+					</td>
+					<td>
+						<?php if(htmlentities($article['validation'])=="valid"):?>
+							<a href="index.php?action=<?php echo'editArticle'?>&&article=<?=intval($article['id'])?>"><i class="far fa-edit"></i></a>
+						<?php else :?>
+							<p>to validate</p>
+						<?php endif; ?>
+					</td>
+					<td>
+						<a href="index.php?action=<?php echo'deleteArticle'?>&&article=<?=intval($article['id'])?>"><i class="fas fa-trash-alt"></i></a>
+					</td>
+					<td>
+						<?php if(htmlentities($article['validation'])=="valid"):?>
+							<i class="fas fa-check-circle"></i>
+						<?php else :?>
+							<i class="fas fa-times-circle"></i>
+						<?php endif; ?>
+					</td>	
+				</tr>
+			<?php endforeach; ?>
+		</tbody>	
+	</table>
+
+	<a href="index.php?action=<?php echo'writeArticle'?>"><button>Write an article </button></a>
+</section>

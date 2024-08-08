@@ -1,0 +1,42 @@
+<div id="signUP">
+
+	<?php if (isset($_SESSION['connected']) && $_SESSION['connected'] === "connected") : ?>
+		<p id="connected">Hi folk! You are already connected </p>
+	<?php else : ?>
+		<div id="formLogin">
+			<?php if (isset($_GET['error'])) : ?>
+				<p id="errorForm">
+					<?php
+					switch (htmlspecialchars($_GET['error'])) {
+						case 'invalid':
+							echo 'Incorrect email or password';
+							break;
+						case 'invalidMail':
+							echo 'Invalid email';
+							break;
+						default:
+							echo '';
+					}
+					?>
+				</p>
+			<?php endif; ?>
+			<p>Do you already have an account? Please enter your e-mail address and password to identify yourself.</p>
+			<form method="post" action="index.php?action=signIn" onsubmit=" return login()">
+				<input type="email" name="email" id="mail" placeholder="Email" required>
+				<input type="password" name="password" id="password" placeholder="Password" required>
+				<input type="submit" name="submit" id="submit" value="Login IN">
+			</form>
+			<div>
+				<p>You are new here, and you want to join the family? Click the below button to register</p>
+				<a href="index.php?action=register">
+					<button id="register">Register</button>
+				</a>
+			</div>
+			<a href="index.php?action=forgottenPassword">
+				<p>Have you forgotten your password?</p>
+			</a>
+
+
+		</div>
+	<?php endif; ?>
+</div>

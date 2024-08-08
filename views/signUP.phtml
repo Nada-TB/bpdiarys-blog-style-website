@@ -1,0 +1,53 @@
+<div id="signUP">
+	<?php if($checkUserStatusConnected ): ?>
+		<p id="connected">Hi folk! You are already connected </p>
+	<?php else : ?>
+		<div id="formSignIn">
+            <?php if (isset($_GET['success']) && htmlspecialchars($_GET['success']) === "success"): ?>
+                <p id="errorForm">Congratulations! You are registered. You can now log in.</p>
+                <a href="index.php?action=login"><button id="log">Log IN</button></a>
+            <?php elseif (isset($_GET['error'])): ?>
+                <?php switch (htmlspecialchars($_GET['error'])):
+                    case "errorfield": ?>
+                        <p id="errorForm">Sorry, your registration failed! Please fill in all fields correctly.</p>
+                    <?php break;
+                    case "exist": ?>
+                        <p id="errorForm">This email address already exists. If you have an account and forgot your password, please click the link below.</p>
+						<a href="index.php?action=login"><button id="log">Log IN</button></a>
+                    <?php break;
+                    case "mismatchPassword":?>
+                        <p id="errorForm">Your password and confirmation do not match. Please verify that both entries are identical and try again.</p>
+                    <?php break;
+                    case 'invalidName':?>
+                        <p id="errorForm">Name should be 3 to 50 letters long and contain only letters and spaces.</p>
+                    <?php break;
+                    case 'invalidEmail':?>
+                        <p id="errorForm">Invalid email address.</p>
+                    <?php break;
+                    default: ?>
+                        <p id="errorForm">An unknown error occurred. Please try again.</p>
+                <?php endswitch; ?>
+            <?php endif; ?>
+			<form action="index.php?action=signUp" method="post">
+                <p>Join our community! We’re excited to have you with us.</p>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <span id="errorName" class="errorRegister"></span>
+
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <span id="errorMail" class="errorRegister"></span>
+
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <span id="errorPassword" class="errorRegister"></span>
+
+                <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirm Password" required>
+                <span id="errorPasswordConfirm" class="errorRegister"></span>
+
+                <input type="submit" name="submit" value="Submit">
+            </form>
+		</div>
+	<?php endif;?>
+</div>
+
+
+
+

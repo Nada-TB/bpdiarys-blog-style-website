@@ -1,0 +1,26 @@
+<form class="write" action="index.php?action=writeArticle" method="post" enctype="multipart/form-data" onsubmit="return validationFormEdition()">
+	<?php if (array_key_exists('error', $_GET)) : ?>
+		<?php if (htmlspecialchars($_GET['error']) === "writePostError") : ?>
+			<p id="actionComment">Failed to insert article.</p>
+		<?php elseif (htmlspecialchars($_GET['error']) === "errorForm") : ?>
+			<p id="actionComment">Oops! It seems like there are some mistakes in your post. Please double-check all the details and submit again.
+			</p>
+		<?php endif; ?>
+	<?php endif; ?>
+	<?php if (array_key_exists('success', $_GET) && htmlspecialchars($_GET['success']) === 'success') : ?>
+		<p id="actionComment">Congratulations! Your article has been successfully published.</p>
+	<?php endif; ?>
+	<legend>write an article</legend>
+	<input type="text" name="title" id="title" placeholder="Title" value="">
+	<span id="errorTitle" class="errorRegister"></span>
+	<input type="text" name="description" id="description" placeholder="description">
+	<span id="errorDescription" class="errorRegister"></span>
+	<input type="file" name="image" id="image" placeholder="Image" value="">
+	<span id="errorImage" class="errorRegister"></span>
+	<textarea id="content" name="content" cols="30" rows="20" placeholder="write your post...."></textarea>
+	<span id="errorContent" class="errorRegister"></span>
+	<input type="text" name="writer" id="writer" placeholder=" The writer name">
+	<button type="submit">Post</button>
+	<a href="index.php?action=tools" title="backward to tools"><i class="fas fa-backward"></i>backward to tools</a>
+
+</form>
