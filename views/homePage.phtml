@@ -6,6 +6,13 @@ if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
         <img src="css/images/bpdMan.png" alt="the bpdiarys man">
     </div>
 <?php else : ?>
+    <div id="presentation">
+            <h1>budding programmer diary</h1>
+            <p>&#147; The diary of someone who randomly met the code &#148;
+            <a href="#homePage"><button title="show articles">read all episodes</button></a>
+            </p>
+            <p></p>
+    </div>
     <div id="homePage">
 
         <?php foreach ($articles as $article) : ?>
@@ -28,7 +35,7 @@ if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
                 <?php if ($checkConnected) : ?>
                     <a href="index.php?action=addFavorite&title=<?= $encodedTitle ?>&favoriteId=<?= urlencode($articleId) ?>"><button title="save the article to read it after">save</button></a>
                 <?php else : ?>
-                    <button title="No time to read it? Click here to save it" id="save">save</button>
+                    <button title="No time to read it? Click here to save it" class="save">save</button>
                 <?php endif; ?>
 
             </article>
