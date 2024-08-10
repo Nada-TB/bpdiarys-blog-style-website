@@ -242,7 +242,7 @@ button {
 }
 
 #homePage p {
-	color: #404040;
+	color: #3E627A;
 	text-indent: 10px;
 	font-size: 1.6rem;
 	font-family: 'Open Sans', sans-serif;
@@ -730,6 +730,9 @@ button {
 	right: 0;
 }
 
+.error{
+	margin-top: 50px ;
+}
 .error img{
 	width: 60%;
 	display: block;
@@ -748,6 +751,7 @@ button {
 	margin-bottom: 20px;
 	font-size: 1.4rem;
 	text-align: center;
+	color:#3e627a;
 }
 
 .error button {
