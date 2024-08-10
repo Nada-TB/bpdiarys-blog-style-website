@@ -25,17 +25,20 @@ header{
 }
 
 #presentation {
-	width: 100%;
-	height: 220px;
-	background-color: #f2cc59;
+	width: 100vw;
+	height: 250px;
+	/* background-color: #f2cc59; */
 	background-image: url("../css/images/presentation.png");
 	background-position: 30% 65%;
-	background-size: cover;
+	background-size:cover;
 	background-repeat: no-repeat;
 	padding: 70px 10px 0;
 	overflow: hidden;
 	position: relative;
 	z-index: 3;
+	margin-top: -10px;
+	margin-right: 0;
+	
 }
 
 #presentation h1{
@@ -55,16 +58,20 @@ header{
 
 #presentation p{
 	text-align: left;
-	width: 40%;
-	font-size:1.1rem;
-	font-family: 'Pacifico', cursive;
-	color: #999999;
+	width: 60%;
+	font-size:1.5rem;
+	font-family:  cursive;
+	color: #3E627A;
 	overflow: hidden;
 	margin-top: 60px;
 	margin-left: -2000px;
 	transition: margin-left 2s ease;
 	-webkit-margin-top:60px;
 	-webkit-transition:  margin-left 2s ease;	
+	padding:10px;
+}
+#presentation a{
+	display: block;
 }
 
 nav {
@@ -74,11 +81,15 @@ nav {
 	padding: 1px 7px;
 	z-index: 7;
 	font-family: 'Inconsolata', monospace;
+	position: fixed;
+	top:0;
+	right:0;
+	left: 0;
 }
 
 nav a {
 	text-decoration: none;
-	color: #6fb7d7;
+	color: #4ba5cd;
 	font-weight: bold;
 	cursor: pointer;
 }
@@ -113,7 +124,7 @@ nav .logo {
 	list-style: none;
 	font-size: 1.24rem;
 	font-weight: bold;
-	color: #6fb7d7;	
+	color: #4ba5cd;	
 }
 
 #navbar a:hover, #appear:hover {
@@ -126,8 +137,8 @@ nav #welcomeSession{
 	right:20px;
 	font-weight: bold;
 	font-family: 'Knewave', cursive;
-	color: #4e595d;
-	font-size: 2rem;
+  	color:#3e627a;
+	font-size: 1,7rem;
 	text-transform: capitalize;	
 }
 
@@ -164,16 +175,14 @@ nav #welcomeSession{
 }
 
 #sous-menu a:hover{
-  	color:#9999;
+  	color:#3e627a;
   	font-size: 2.5rem;
   	transition: font-size 1s linear;
 }
 
 /*****************************************mainStyle***********************************/
-
-main {
-	max-width: 550px;
-	margin: 50px auto;
+main{
+	width:100vw;
 }
 
 input{
@@ -196,7 +205,7 @@ input:focus {
 button {
 	border-radius: 30px 50px 30px 50px;
 	background-color: #6fb7d7;
-	color:#f2cc59;
+	color:#f5d67a;
 	font-weight: bold;
 	outline: none;
 	border: none;
@@ -207,10 +216,15 @@ button {
 	text-transform: capitalize;
 }
 
+#homePage {
+	width:95%;
+	margin: 50px auto;
+} 
+
 #homePage article {
 	border-radius: 50px 30px 50px 30px;
 	background-color:#f5d67a;
-	opacity: 0.85;
+	opacity: 0.95;
 	padding: 20px;
 	margin: 80px 50px;
 	word-break: break-all;
@@ -230,7 +244,7 @@ button {
 #homePage p {
 	color: #404040;
 	text-indent: 10px;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1.6
 }
@@ -239,7 +253,7 @@ button {
 	display: block;
 	color:#404040;
 	text-indent: 20px;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	padding-bottom: 5px;
 }
  
@@ -252,8 +266,8 @@ button {
 	text-align: center;
 	text-transform: capitalize;
 	font-family: 'Pacifico', cursive;
-	color: #ff531a;
-	font-size: 1.6rem;
+	color: #9C4032;
+	font-size: 2rem;
 	padding: 15px;
 }
 
@@ -578,8 +592,8 @@ button {
 /***********************************ElementsInBody*************************************/
 #socialMedia, #popup {
 	position: fixed;
-	background-color: #9999;
-	background-color: rgba(153,153,153,0.6); /*for IE*/
+	background-color: rgb(62, 60, 60);
+	/* background-color: rgba(153,153,153,0.6); for IE */
 	opacity: 0.9;
 	width: 100%;
 	height: 100%;
@@ -601,7 +615,7 @@ button {
 	top: 10%;
 	right: 15%;
 	z-index: 1;
-	background-color: #6fb7d7;
+	background-color: #0aaff5;
 	opacity: 1!important;
 	text-align: center;
 	border-radius: 40px 20px 40px 20px;
@@ -618,7 +632,7 @@ button {
 
 #socialMedia .fab, #socialMedia .fas, #socialMedia a{
 	padding: 5px;
-	color:#f2cc59 ;
+	color:#f4b909 ;
 	font-size: 2rem;
 	text-decoration: none;
 	padding: 5px;
@@ -648,7 +662,7 @@ button {
 }
 
 #socialList li form button {
-	background-color:#f2cc59;
+	background-color:#f4b909;
 	border-radius: 50%;
 	padding: 5px;
 	color: #6fb7d7;
@@ -664,7 +678,7 @@ button {
 
 #socialList h3 {
 	text-transform: capitalize;
-	color:#f2cc59 ;
+	color:#f4b909 ;
 	font-family: 'Pacifico', cursive;
 }
 
@@ -750,7 +764,7 @@ button {
 	right: 25%;
 	width:50%;
 	text-align: center;
-	color: #6fb7d7;
+	color: #17b2f5;
 	padding: 50px 20px;
 	border-radius: 40px 20px 40px 20px;
 	text-transform: uppercase;
@@ -786,12 +800,12 @@ button {
 /******************************************footer**********************************************/
 
 footer {
-	width: 100%;
+	width: 100vw;
 	margin: 50px auto 0 ;
 	padding: 20px;
 	text-align: center;
 	background-color:#f5d67a;
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 footer .logo {
@@ -807,7 +821,7 @@ footer .logo {
 }
 
 #newsletterFooter p {
-	color: #404040;
+	color: #3E627A;
 	padding: 5px;
 }
 
@@ -843,7 +857,7 @@ small .fab:hover {
 @media screen and (min-width: 767px){
 
 	#presentation {
-		height: 350px;
+		height: 400px;
 		background-position: 100% 100%;
 		padding-top: 100px;
 	}
@@ -856,12 +870,15 @@ small .fab:hover {
 	#presentation p {
 		width: 30%;
 		font-size: 2rem;
-		opacity: 0.7;
+		/* opacity: 0.7; */
 		margin-top: 80px;
 		margin-left:-500px;
 		-webkit-margin-top:50px;
 	}
 
+	nav #welcomeSession{
+		font-size: 2rem;
+	}
 	#navbar {
 		font-size: 1.8rem;
 		font-weight: normal;
@@ -891,10 +908,14 @@ small .fab:hover {
 		font-size: 1.75rem;
 	}
 
-  	main {
+  	/* main {
   		max-width: 500px;
-  	}
+  	} */
 
+	#homePage {
+		width:60%;
+		margin: 50px auto;
+	} 
 	#homePage article:nth-child(even) {
 		margin:80px 15px 80px 100px; 
 	}
@@ -958,7 +979,7 @@ small .fab:hover {
 	#presentation {
 		background-size: 102% 100%;
 		background-image: url('../css/images/BPD.png');
-		height:350px;	
+		height:450px;	
 	} 
 
 	#presentation h1 {
@@ -1013,9 +1034,9 @@ small .fab:hover {
 		right: 35%;
 	}
 
-	main {
+	/* main {
 		max-width: 900px;
-	}
+	} */
 
 	#homePage {
 		display: -webkit-flex;
@@ -1026,6 +1047,7 @@ small .fab:hover {
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		align-items: center;
+		width:70%;
 	}
 
 	#homePage article {
