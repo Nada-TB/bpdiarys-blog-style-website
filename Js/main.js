@@ -36,7 +36,9 @@ import {
   closeBtn,
   popupbtn,
   formSignIn, 
-  formUpdateProfile
+  formUpdateProfile,
+  popup,
+  saveArticleBtn
 } from "./domElements.js";
 
 import {getComment} from "./ajaxModule.js";
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.onscroll = function () {
-  scrollFunction(), stickyNavBar();
+  scrollFunction();
 };
 
 subscribeButton.addEventListener("click", showSocialMediaList);
@@ -60,6 +62,9 @@ downBtn.addEventListener("click", downFunction);
 menu.addEventListener("click", showSousMenu);
 closeBtn.addEventListener("click", hideSousMenu);
 popupbtn.addEventListener("click", closePopup);
+Array.from(saveArticleBtn).forEach(elt=>{
+  elt.addEventListener('click', autorisationSaveArticle);
+})
 
 // if (document.title == "login page") {
 //   document.getElementById("register").addEventListener("click", showformSignIn);

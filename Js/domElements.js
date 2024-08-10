@@ -13,6 +13,7 @@ const socialMedia = document.getElementById("socialMedia");
 const image = document.getElementById("imageWriter");
 let formSignIn=document.querySelector('#formSignIn form');
 const formUpdateProfile=document.getElementById('updateProfile');
+const saveArticleBtn=document.getElementsByClassName('save');
 
 export {
   popup,
@@ -29,5 +30,6 @@ export {
   socialMedia,
   image,
   formSignIn,
-  formUpdateProfile
+  formUpdateProfile,
+  saveArticleBtn
 };

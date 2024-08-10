@@ -126,7 +126,7 @@ function showLogin() {
 function autorisationSaveArticle() {
   popup.style.display = "block";
   document.querySelector("#popup p").innerHTML =
-    "Don't hesitate, Register and save your favorites articles to read them later!";
+    "Don't hesitate—register and save your favorite articles to read them later!";
 }
 
 export {
