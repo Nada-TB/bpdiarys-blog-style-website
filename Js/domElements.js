@@ -14,6 +14,7 @@ const image = document.getElementById("imageWriter");
 let formSignIn=document.querySelector('#formSignIn form');
 const formUpdateProfile=document.getElementById('updateProfile');
 const saveArticleBtn=document.getElementsByClassName('save');
+const footer= document.querySelector('footer');
 
 export {
   popup,
@@ -31,5 +32,6 @@ export {
   image,
   formSignIn,
   formUpdateProfile,
-  saveArticleBtn
+  saveArticleBtn,
+  footer
 };

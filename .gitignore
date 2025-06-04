@@ -1,3 +1,5 @@
 views/layout.phtml
 index.php
 .gitignore
+.htaccess
+sql/

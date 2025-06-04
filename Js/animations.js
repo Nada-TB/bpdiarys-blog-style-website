@@ -12,6 +12,7 @@ import {
   overlayDiv,
   socialMedia,
   image,
+  footer
 } from "./domElements.js";
 
 function animateHeroMessageOnload() {
@@ -126,9 +127,20 @@ function showLogin() {
 function autorisationSaveArticle() {
   popup.style.display = "block";
   document.querySelector("#popup p").innerHTML =
-    "Don't hesitate—register and save your favorite articles to read them later!";
+  "Sign up now to effortlessly bookmark and enjoy your favorite articles at your convenience! <a href='index.php?action=register'><button>Sign up</button></a>";
 }
 
+function footerVisibility(){
+  let footerCoordinate= footer.getBoundingClientRect();
+  let windowHeight=window.innerHeight;
+  if(footerCoordinate.top<=windowHeight){
+    subscribeButton.style.opacity="0";
+    subscribeButton.style.pointerEvents="none"
+  }else{
+    subscribeButton.style.opacity="1";
+    subscribeButton.style.pointerEvents="auto"
+  }
+}
 export {
   animateHeroMessageOnload,
   showSocialMediaList,
@@ -144,4 +156,5 @@ export {
   showformSignIn,
   showLogin,
   autorisationSaveArticle,
+  footerVisibility
 };

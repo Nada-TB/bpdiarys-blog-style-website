@@ -15,6 +15,7 @@ import {
   showformSignIn,
   showLogin,
   autorisationSaveArticle,
+  footerVisibility
 } from "./animations.js";
 
 import {
@@ -96,3 +97,5 @@ if(formUpdateProfile){
 }else{
   console.log('Form not found.');
 }
+
+window.addEventListener('scroll',footerVisibility);

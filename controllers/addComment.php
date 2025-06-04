@@ -12,10 +12,10 @@ if (array_key_exists('connected', $_SESSION) && $_SESSION['connected'] === "conn
 		$condition = !empty($name ?? '') && !empty($message ?? '') && isset($articleId) && isset($userId);
 		if ($condition) {
 			$addComment->execute([$name, $message, $articleId, $userId]);
-			header('Location:index.php?action=article&articleId=' . urlencode($articleId) ."&success=commentSuccess");
+			header('Location:index.php?action=article&articleId=' . urlencode($articleId) ."&success=commentSuccess#comments");
 			exit();
 		} else {
-			header('Location: index.php?action=article&articleId=' . urlencode($articleId) . '&error=commentFailed');
+			header('Location: index.php?action=article&articleId=' . urlencode($articleId) . '&error=commentFailed#actionComment');
 			exit();
 		}
 	} else {

@@ -9,5 +9,5 @@ if (array_key_exists('connected', $_SESSION) && sanitize_input($_SESSION['connec
 	$deleteComment->execute([$commentId]);
 }
 
-header('Location:index.php?action=article&&articleId=' . $articleId);
+header('Location:index.php?action=article&&articleId=' . $articleId ."#comments");
 exit();

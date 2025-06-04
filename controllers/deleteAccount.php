@@ -6,11 +6,11 @@
 
 	if(!empty($_SESSION)){
 
-		$deleteFavorite->execute([test_input($_SESSION['id'])]);
+		$deleteFavorite->execute([sanitize_input($_SESSION['id'])]);
 
-		$deleteComments->execute([test_input($_SESSION['id'])]);
+		$deleteComments->execute([sanitize_input($_SESSION['id'])]);
 
-		$deleteAccount->execute([test_input($_SESSION['id'])]);
+		$deleteAccount->execute([sanitize_input($_SESSION['id'])]);
 		
 		session_destroy();
 		header("location:index.php?action=home");

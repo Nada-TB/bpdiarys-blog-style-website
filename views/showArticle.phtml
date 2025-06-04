@@ -1,6 +1,6 @@
 <section id="post">
 	<article>
-		<h2>&#60;&#47; <?= htmlentities($article['title'], ENT_QUOTES, 'UTF-8') ?>&#62; </h2>
+		<h3>&#60;&#47; <?= htmlentities($article['title'], ENT_QUOTES, 'UTF-8') ?>&#62; </h3>
 		<span>
 			<i class="far fa-clock"></i> <?= htmlentities($article['timeDate'], ENT_QUOTES, 'UTF-8') ?>
 			by <?= ucwords(htmlentities($article['writer'], ENT_QUOTES, 'UTF-8')) ?>
@@ -16,49 +16,47 @@
 		</div>
 		<p id="article2"><?= htmlentities($article['content'], ENT_QUOTES, 'UTF-8') ?></p>
 		<p id="article"></p>
+		<button id="showComment" class="primary-btn"> comment</button>
 		<?php if ($checkUserConnected) : ?>
 			<a href="index.php?action=addFavorite&&title=<?= urlencode(htmlentities($article['title'], ENT_QUOTES, 'UTF-8')) ?>&&favoriteId=<?= urlencode(intval($article['id'])) ?>">
-				<button title="save the article to read it after">save</button>
+				<button title="save the article to read it after" class="secondary-btn">save</button>
 			</a>
 		<?php else : ?>
-			<button title="save the article to read it after" id="save">save</button>
+
+			<button title="save the article to read it after" id="save" class="secondary-btn">save</button>
 		<?php endif; ?>
-		<a href="index.php?action=home"><button>home page</button></a>
+		<a href="index.php?action=home#homePage"><button class="tertiary-btn">Explore All Articles</button></a>
 	</article>
 </section>
 
 <section id="comments">
 	<h2>&#47;&#47; Comments : <?= htmlentities($commentNumber['commentNumber'], ENT_QUOTES, 'UTF-8') ?></h2>
-	<button id="showComment">click here to comment</button>
 	<?php if (isset($_GET['error']) && $_GET['error'] === "commentFailed") : ?>
 		<p id="actionComment">It looks like something went wrong with your comment. Please try submitting it again.</p>
 	<?php elseif (isset($_GET['success']) && $_GET['success'] === "commentSuccess") : ?>
-		<p id="actionComment">Your comment has been posted successfully. Thank you for your feedback!</p>
+		<p id="actionComment">Thank you for your feedback!</p>
 	<?php endif; ?>
 
-	<form class="editMessage" action="index.php?action=addComment" method="post">
-		<legend>&#47;&#8727; Write your comment &#8727;&#47;</legend>
-		<fieldset>
-			<label for="name">your name</label>
-			<input type="text" name="name" id="name" value="<?= isset($_SESSION['name']) ? htmlentities($_SESSION['name'], ENT_QUOTES, 'UTF-8') : '' ?>" placeholder="Enter your name">
+	<form action="index.php?action=addComment" method="post">
+		<?php if ($checkUserConnected) : ?>
+			<input type="hidden" name="name" id="name" value="<?= isset($_SESSION['name']) ? htmlentities($_SESSION['name'], ENT_QUOTES, 'UTF-8') : '' ?>" />
+			<textarea id="message" name="message"  placeholder="&#47;&#8727;  Hi <?= htmlentities($_SESSION['name'], ENT_QUOTES, 'UTF-8') ?> ! Share your thoughts! I’d love to hear what you have to say ! &#8727;&#47;"></textarea>
+		<?php else:?>
+			<textarea id="message" name="message"  placeholder="&#47;&#8727; Share your thoughts! I’d love to hear what you have to say. &#8727;&#47;"></textarea>
+		<?php endif; ?>
 
-			<label for="message">your comment</label>
-			<textarea id="message" name="message" id="name"></textarea>
+		<input type="hidden" name="articleId" id="name" value="<?= intval($_GET['articleId']) ?>">
 
-			<input type="hidden" name="articleId" id="name" value="<?= intval($_GET['articleId']) ?>">
+		<?php if (isset($_SESSION['id'])) : ?>
+			<input type="hidden" name="userId" value="<?= intval($_SESSION['id']) ?>">
+		<?php endif; ?>
 
-			<?php if (isset($_SESSION['id'])) : ?>
-				<input type="hidden" name="userId" value="<?= intval($_SESSION['id']) ?>">
-			<?php endif; ?>
-
-			<input type="submit" name="submit" value="Submit">
-		</fieldset>
+		<input type="submit" name="submit" value="Submit" class="primary-btn">
 	</form>
 
 	<?php foreach ($comments as $comment) : ?>
 		<article>
-			<h3><?= htmlentities($comment['name'], ENT_QUOTES, 'UTF-8') ?></h3>
-			<h4><?= htmlentities($comment['timeDate'], ENT_QUOTES, 'UTF-8') ?></h4>
+			<h3><?= htmlentities($comment['name'], ENT_QUOTES, 'UTF-8') ?>  <span> <?= htmlentities($comment['timeDate'], ENT_QUOTES, 'UTF-8') ?></span></h3>
 			<p><?= htmlentities($comment['content'], ENT_QUOTES, 'UTF-8') ?></p>
 
 			<?php if ($checkUserStatus) : ?>
@@ -69,7 +67,7 @@
 
 			<?php if (isset($_SESSION['id']) && intval($_SESSION['id']) === intval($comment['comment_Id'])) : ?>
 				<a href="index.php?action=deleteComment&commentId=<?= urlencode(intval($comment['id'])) ?>&articleId=<?= urlencode(intval($comment['article_Id'])) ?>">
-					<i class="fas fa-trash-alt"></i>
+					<i class="fas fa-trash-alt" title="click here to delete your message"></i>
 				</a>
 			<?php endif; ?>
 		</article>

@@ -28,8 +28,9 @@
                         <p id="errorForm">An unknown error occurred. Please try again.</p>
                 <?php endswitch; ?>
             <?php endif; ?>
+            <p>Unlock the full experience! Sign up now to bookmark your favorite articles, and discover even more tailored content just for you.</p>
 			<form action="index.php?action=signUp" method="post">
-                <p>Join our community! We’re excited to have you with us.</p>
+                
                 <input type="text" name="name" id="name" placeholder="Your Name" required>
                 <span id="errorName" class="errorRegister"></span>
 
@@ -42,7 +43,7 @@
                 <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirm Password" required>
                 <span id="errorPasswordConfirm" class="errorRegister"></span>
 
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" name="submit" value="Submit" class="primary-btn">
             </form>
 		</div>
 	<?php endif;?>

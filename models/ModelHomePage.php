@@ -17,6 +17,7 @@ $articles= $stmt->fetchAll(PDO::FETCH_ASSOC);
     $message = 'An error occurred while fetching articles. Please try again later.';
     $template = 'errorPage';
     include 'views/layout.phtml';
+    exit;
 }
 
 

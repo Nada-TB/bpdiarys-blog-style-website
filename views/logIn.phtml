@@ -20,20 +20,21 @@
 					?>
 				</p>
 			<?php endif; ?>
-			<p>Do you already have an account? Please enter your e-mail address and password to identify yourself.</p>
+			<p>Already have an account? Log in with your email address and password to pick up where you left off!</p>
 			<form method="post" action="index.php?action=signIn" onsubmit=" return login()">
 				<input type="email" name="email" id="mail" placeholder="Email" required>
 				<input type="password" name="password" id="password" placeholder="Password" required>
-				<input type="submit" name="submit" id="submit" value="Login IN">
+				<input type="submit" name="submit" id="submit" value="Login " class="primary-btn">
 			</form>
 			<div>
-				<p>You are new here, and you want to join the family? Click the below button to register</p>
+				
 				<a href="index.php?action=register">
-					<button id="register">Register</button>
+					<!-- <button id="register" class="secondary-btn">Register</button> -->
+					<p>New here and ready to join the family? Click here to register and get started!</p>
 				</a>
 			</div>
 			<a href="index.php?action=forgottenPassword">
-				<p>Have you forgotten your password?</p>
+				<p>Forgot your password? Click here to reset it and regain access!</p>
 			</a>
 
 

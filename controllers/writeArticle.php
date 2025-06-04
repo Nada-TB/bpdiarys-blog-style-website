@@ -73,7 +73,7 @@ if ($condition) {
 		$message = "An unexpected error occurred: " . $e->getMessage();
 	}
 
-	include 'views/layout.phtml';
+	include 'views/admin.layout.phtml';
 
 } else {
 	header("location:index.php?action=home");

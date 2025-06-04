@@ -6,7 +6,7 @@ $validActions = [
     'home', 'bio', 'contact', 'subscribe', 'login','register', 'signIn', 'signUp', 'logout', 'article',
     'favorite', 'addFavorite', 'deleteFavorite', 'addComment', 'deleteComment', 'profile',
     'verify', 'deleteAccount', 'tools', 'deleteArticle', 'editArticle', 'writeArticle',
-    'messages', 'deleteMessage', 'forgottenPassword', 'resetPassword', 'deleteSubscriber'
+    'messages', 'deleteMessage', 'forgottenPassword', 'resetPassword', 'deleteSubscriber','deleteProfile','editProfile', 'admin', 'adminHomePage','adminSignIn','adminLogOut'
 ];
 
 // Define action to controller mapping
@@ -26,7 +26,9 @@ $controllers = [
     'deleteFavorite' => 'deleteFavorite.php',
     'addComment' => 'addComment.php',
     'deleteComment' => 'deleteComment.php',
-    'profile' => 'Profile.php',
+    'profile' => 'profile.php',
+    'editProfile'=> 'editProfile.php',
+    'deleteProfile'=>'deleteProfile.php',
     'verify' => 'verify.php',
     'deleteAccount' => 'deleteAccount.php',
     'tools' => 'tools.php',
@@ -37,7 +39,12 @@ $controllers = [
     'deleteMessage' => 'deleteMessage.php',
     'forgottenPassword' => 'forgottenPassword.php',
     'resetPassword' => 'resetPassword.php',
-    'deleteSubscriber' => 'deleteSubscriber.php'
+    'deleteSubscriber' => 'deleteSubscriber.php',
+    'admin' => 'admin.loginPage.php',
+    'adminHomePage'=>"admin.homePage.php",
+    'adminSignIn'=>"admin.signIn.php",
+    'adminLogOut'=>"admin.logout.php"
+
 ];
 
 try {

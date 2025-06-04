@@ -1,5 +1,7 @@
 <section class="tools">
-	<table>
+<a href="index.php?action=adminHomePage" title="Back to Admin Dashboard" class="link"><i class="fas fa-backward"></i>Back to Admin Dashboard</a>
+<a href="index.php?action=<?php echo'writeArticle'?>"><button>add article </button></a>
+<table>
 		<thead>
 			<th>Articles titles</th>
 			<th>Update</th>
@@ -11,7 +13,7 @@
 			<?php foreach ($articles as $article): ?>
 				<tr>
 					<td>
-						<a href="index.php?action=<?php echo 'article'?>&&article=<?=htmlentities($article['id'])?>"><?= htmlentities($article['title']) ?></a>
+						<a href="index.php?action=<?php echo 'article'?>&&articleI=<?=htmlentities($article['id'])?>"><?= htmlentities($article['title']) ?></a>
 					</td>
 					<td>
 						<?php if(htmlentities($article['validation'])=="valid"):?>
@@ -35,5 +37,5 @@
 		</tbody>	
 	</table>
 
-	<a href="index.php?action=<?php echo'writeArticle'?>"><button>Write an article </button></a>
+	
 </section>

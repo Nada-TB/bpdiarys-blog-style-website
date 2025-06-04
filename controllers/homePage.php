@@ -11,7 +11,7 @@ try{
     $message = 'An error occurred while loading the necessary files. Please try again later.';
     $template = 'errorPage';
     include 'views/layout.phtml';
-
+	exit;
 }
 
 // Check if the user is connected

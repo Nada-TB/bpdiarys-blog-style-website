@@ -1,0 +1,30 @@
+<?php if (array_key_exists('error', $_GET) && !empty(htmlspecialchars($_GET['error']))) : ?>
+	<?php if (htmlspecialchars($_GET['error']) == 'errorForm') : ?>
+		<p id="actionComment">Your form is invalid, please fill in correctly all fields of the form</p>
+	<?php elseif (htmlspecialchars($_GET['error']) == 'errorPass') : ?>
+		<p id="actionComment"> your old password isn't correct</p>
+	<?php endif; ?>
+<?php endif; ?>
+<?php if (array_key_exists('success', $_GET) && htmlspecialchars($_GET['success']) === "success") : ?>
+	<p id="actionComment"> Your profile was successfully updated. </p>
+<?php endif; ?>
+
+
+<section class="write">
+	<h3>Keep your profile up to date! Make changes and stay in control</h3>
+	<form method="post" action="index.php?action=profile" id="updateProfile">
+		
+		<input type="text" name="name" id="firstName" value="<?= htmlentities($_SESSION['name']) ?>" title=" your first Name">
+		<span id="errorFirstName" class="errorRegister"></span>
+		<input type="email" name="email" id="email" value="" placeholder="enter your email">
+		<span id="errorEmail" class="errorRegister"></span>
+		<input type="password" name="oldPassword" id="passOld" placeholder=" your current password">
+		<span id="errorOldPassword" class="errorRegister"></span>
+		<input type="password" name="newPassword" id="password" placeholder="your new password">
+		<span id="errorNewPassword" class="errorRegister"></span>
+		<input type="password" name="passwordConfirm" id="passConfirm" placeholder="confirm your new password">
+		<span id="errorNewPasswordC" class="errorRegister"></span>
+		<button type="submit" class="primary-btn">submit</button>
+	</form>
+	<a href="index.php?action=profile" class="tertiary-btn">Back to My Profile</a>
+</section>
