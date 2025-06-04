@@ -1,0 +1,963 @@
+
+main {
+  width: 100vw;
+}
+/****************************home page*****************************************************/
+
+#presentation {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background-color: #bfe9fb99;
+  padding: 50px 20px 20px 20px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+h1 {
+  font-family: "Knewave", cursive;
+  text-transform: uppercase;
+  font-size: 36px;
+  color: #3e627a;
+  margin-bottom: 30px;
+}
+
+#presentation img {
+  display: none;
+}
+
+#presentation p {
+  font-size: 1.5rem;
+  font-family: cursive;
+  color: #424242;
+  overflow: hidden;
+}
+
+#presentation a {
+  display: block;
+}
+
+#presentation span {
+  color: #9c4032;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#homePage {
+  width: 100%;
+  margin: 50px auto;
+}
+
+#homePage h2 {
+  color: #3e627a;
+  font-size: 24px;
+  padding-left: 50px;
+}
+
+#homePage article {
+  border-radius: 50px 30px 50px 30px;
+  background-color: #bfe9fb;
+  border: 1px solid #3e627a;
+  opacity: 0.95;
+  padding: 10px 20px;
+  margin: 80px 50px;
+  word-break: break-all;
+  transition: 2s ease;
+  box-shadow: 1px 2px 15px #9999;
+}
+
+#homePage article:nth-child(even) {
+  margin: 80px 35px 80px 80px;
+}
+
+#homePage article:hover {
+  transform: scale(1.1);
+  transition: transform 1s linear;
+}
+
+#homePage p {
+  color: #424242;
+  text-indent: 10px;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+
+#homePage span {
+  display: block;
+  color: #404040;
+  text-indent: 10px;
+  font-size: 12px;
+  padding: 15px 0 10px;
+  text-align: justify;
+}
+
+#homePage button:hover,
+#post button:hover {
+  transform: scale(1.2);
+  transition: transform 0.6s linear;
+}
+
+#homePage h3,
+#post h3 {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Pacifico", cursive;
+  color: #9c4032;
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
+/***************************************contact page**************************************************/
+.editMessage {
+  max-width: 75%;
+  margin: 100px auto;
+  font-family: var(--fontText);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.editMessage legend {
+  margin: 0 auto;
+  padding: 15px 5px;
+  font-size: 1.6rem;
+}
+.editMessage .important {
+	color: var(--red);
+	display: inline;
+	font-size: large;
+	font-weight: bolder;
+}
+
+.editMessage fieldset {
+ 
+  border: 1px solid var(--darkGrey);
+  background-color: var(--lightBlue);
+  border-radius: 8px;
+  margin-top: 30px;
+  
+} 
+
+.editMessage input[type="text"],
+.editMessage input[type="email"] {
+  width: 80%;
+  padding: 7px;
+  background-color: white;
+}
+
+.editMessage textarea {
+  width: 80%;
+  border-radius: 8px;
+  height: 150px;
+  text-align: left;
+  font-size: 1.4rem;
+  outline: none;
+  padding: 10px;
+  border: 1px solid var(--darkBlue);
+  margin-top: 8px;
+}
+
+.editMessage label,
+.editMessage legend {
+  display: block;
+  text-transform: capitalize;
+  color: var(--darkBlue);
+  font-weight: bold;
+  /* padding: 10px; */
+  text-align: center;
+}
+
+
+.editMessage span {
+  color: var(--red);
+  font-family: "Inconsolata", monospace;
+  display: block;
+  padding: 15px 5px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/******************************************bio page **********************************************/
+#resume {
+  width: 90%;
+  margin: 80px auto;
+}
+
+#resume video {
+  width: 90%;
+  margin: 40px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px var(--lightBlue);
+}
+
+#resume article {
+  padding: 20px;
+  /* background-color: #ffffe6;
+	box-shadow: 1px 2px 10px #f2cc59;
+	border-radius: 20px; */
+}
+
+#resume h3 {
+  text-align: center;
+  color: var(--darkBlue);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+#resume p {
+  line-height: 1.8;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  font-family: "Pacifico", cursive;
+}
+
+#resume span {
+  color: var(--red);
+  font-weight: bolder;
+}
+
+/**********************************signUp/in Page ********************************************************/
+.signUP {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-around;
+  width: 80%;
+  margin: 80px auto;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.signUP input, .editMessage input {
+  border: 1px solid var(--darkBlue);
+  display: block;
+  text-align: left !important;
+  margin: 10px auto !important;
+  padding: 10px 15px;
+}
+
+.signUP input[type="submit"] {
+	margin-top: 30px!important;
+}
+
+.signUP legend {
+  margin: 30px auto;
+}
+
+.signUP label {
+  color: var(--darkGrey);
+  margin: 10px auto;
+  width: 200px;
+  font-weight: bold;
+  
+}
+
+#formSignIn {
+  display: block !important;
+ 
+}
+
+/* .signUP p {
+	font-size: 18px;
+	padding: 20px 50px;
+} */
+.signUP a {
+  display: block;
+  text-align: center; 
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/*********************************Post page****************************************/
+#post {
+  max-width: 85%;
+  margin: 50px auto 20px;
+  padding: 50px 10px 0px;
+  /* prevent select*/
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+#post img {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
+}
+
+#X-share{
+  padding: 10px;
+}
+
+#post span {
+  color:var(--darkBlue);
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Knewave", cursive;
+  margin-bottom: 30px;
+}
+
+#article p:first-child,
+#article p:last-child {
+  font-weight: bold;
+}
+
+#post p {
+  text-indent: 10px;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  margin: 40px 0;
+}
+
+
+#article h3 {
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+}
+
+#commentSection {
+  display: none;
+}
+#comments p {
+  line-height: 2.2;
+  white-space: pre-wrap;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+}
+
+
+#comments {
+  max-width: 80%;
+  margin: 30px auto 150px;
+}
+
+#comments h2 {
+  color:var(--red);
+  display: inline-block;
+  font-size: 24px;
+  font-family: var(--fontTitle)
+}
+
+#comments a{
+  display: block;
+  text-align: left;
+
+}
+
+
+#comments textarea{
+  display: block;
+  width: 95%;
+  margin: 20px auto 5px ;
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+#comments input[type="submit"]{
+  float: right;
+}
+
+#comments form {
+  margin-bottom: 140px ;
+}
+
+#comments article {
+  padding :5px;
+  position: relative;
+  display: block;
+  width: 95%;
+  margin: 40px auto 50px ;
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  background-color: var(--lightBlue);
+}
+
+/* #comments div {
+  border-top: 2px solid #f2cc59;
+  margin: 20px auto;
+  max-width: 70%;
+} */
+
+#comments h3 {
+  color: var(--darkBlue);
+  font-size: 1.5rem;
+  font-family: var(--fontText);
+  text-transform: capitalize;
+  position: absolute;
+  top: -40px;
+  left:0;
+}
+
+/* #comments span {
+  color: var(--darkBlue);
+  font-size: 1.4rem;
+  font-family: "Inconsolata", monospace;
+} */
+
+#comments h3 span  {
+  margin-left: 10px;
+  color: rgb(105, 103, 103);
+  font-size: 1.2rem;
+}
+#comments h4{
+  text-transform: capitalize;
+  color: var(--darkBlue);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.messageInfo {
+  display: block ;
+  padding:10px 0 5px;
+  color: var(--darkGrey);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#comments article .fas {
+  position: absolute;
+  top: 5px;
+  right:10px;
+  color:var(--red);
+  font-size: 16px;
+}
+
+#comments p {
+  padding-left: 10px;
+  font-size: 1.6rem;
+  color:var(--darkGrey);
+}
+
+
+
+
+#commentForm {
+  display: none;
+  max-width: 100%;
+}
+
+#shareArticle {
+  display: block;
+  margin: 25px 0;
+  color: var(--darkBlue);
+}
+
+/************************************favorite page***************************************************/
+.tools {
+  margin-top: 100px;
+}
+
+.tools thead {
+   display: none; 
+}
+
+.tools td {
+  border: 1px solid var(--darkBlue);
+  border-collapse:separate;
+  border-spacing: 10px;
+  text-align: left;
+  padding: 20px 15px;
+  border-radius: 8px;
+  width:100%;
+  display: block;
+  box-shadow: 1px 1px 5px var(--lightBlue);
+  background-color: var(--lightBlue);
+  margin: 10px;
+}
+
+.tools table {
+  
+  width:80%;
+  margin: 20px auto;
+  font-family: "Pacifico", cursive;
+  font-size: 1.4rem;
+  
+}
+
+.tools  table a{
+  color: var(--darkGrey);
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.tools a:hover{
+  color:var(--red);
+}
+
+.tools table  .fas{
+  color: var(--red);
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+
+
+}
+
+.tools button {
+  display: block;
+  margin: 20px auto;
+}
+
+
+.tools p {
+  text-align: center;
+  color: var(--red);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px 20px;
+}
+
+.tools h3{
+  text-align: center;
+  color:var(--darkBlue);
+  font-size: 16px;
+  margin: 40px 0;
+}
+/***********************************editing pages***********************************************/
+.write {
+  max-width: 70%;
+  margin: 120px auto;
+  text-align: center;
+}
+.write h3 {
+  font-size: 16px;
+  color:var(--darkBlue);
+}
+
+
+/*****************************************admin page**********************************************/
+
+
+#panel{
+  display: flex;
+  width:80%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-around;
+  margin: 40px auto;
+ 
+}
+
+#panel a{
+  text-decoration: none;
+  color: var(--darkGrey);
+}
+
+#panel div{
+  border:1px solid var(--darkBlue);
+  border-radius: 8px 16px;
+  width:43%;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: var(--lightBlue);
+  box-shadow: 1px 2px 15px #9999;
+  text-align: center;
+  color:var(--darkGrey);
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+
+#panel div:nth-child(2){
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: space-around;
+  color:var(--darkGrey);
+  font-weight: bold;
+  font-size:14px;
+  font-family: var(--fontText);
+
+}
+
+#panel div:nth-child(odd){
+  background-color: var(--yellow);
+}
+
+#panel h2{
+  flex-basis: 100%;
+  text-align: center;
+  color: var(--darkBlue);
+  margin-bottom: 30px;
+  font-size: 24px;
+
+}
+
+#stats p {
+   width:80%;
+   margin:0 auto;
+    padding:10px;
+    text-align: left; 
+    font-size: 16px ;
+}
+
+
+ .number{
+    color:var(--red);
+    background-color: var(--yellow);
+    padding: 5px;
+    margin-right: 8px;
+    border-radius: 4px;
+   
+}
+
+
+
+
+
+
+
+
+
+
+#formLogin input,
+#formLogin p,
+#formSignIn input,
+#formSignIn p {
+  max-width: 100%;
+  margin: 20px auto !important;
+  text-align: center;
+}
+
+#connected {
+  margin: 20px auto;
+  text-align: center;
+  max-width: 100%;
+  padding: 20px;
+  font-size: 1.8rem;
+  color: #6fb7d7;
+  background-color: #f2cc59;
+  border-radius: 50px 30px 50px 30px;
+  box-shadow: 2px 2px 10px #9999;
+}
+
+.signUP button,
+.write button,
+#tools button {
+  margin: 30px auto;
+  display: block;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+}
+
+
+/* .write h3, .tools h3 {
+  text-align: center;
+  color:var(--darkBlue);
+  font-size: 24px;
+  margin-bottom: 50px;
+} */
+
+.link {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--darkBlue);
+  padding: 20px;
+  text-align: center;
+}
+.fa-backward {
+  padding-right: 10px;
+}
+
+.write form {
+  margin-top: 30px;
+}
+.write input,
+.write textarea {
+  width: 90%;
+  display: block;
+  margin: 15px auto;
+  background-color: #ebf5fa;
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.write textarea:focus {
+  outline: none;
+}
+
+
+.write .fa-backward {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  color: var(--darkBlue);
+  font-weight: bold;
+}
+
+
+
+/***********************************ElementsInBody*************************************/
+
+
+.error {
+  margin-top: 100px;
+}
+
+.error img {
+  width: 180px;
+  margin: 0 auto;
+  display: block;
+  transform: rotate(-25deg);
+}
+
+.error::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.error h3 {
+  padding: 10px;
+  margin-bottom: 35px;
+  font-size: 24px;
+  text-align: center;
+  color: #3e627a;
+}
+
+.error button {
+  margin: 10px  auto 20px;
+  display: block;
+}
+
+.error a{
+  text-decoration: none;
+}
+
+
+
+
+#errorForm,
+.errorRegister {
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+
+
+.profile{
+	margin: 150px auto 80px;
+	width: 90%;
+	text-align: center;
+}
+.profile i{
+	margin-left: 20px ;
+	color: var(--darkBlue);
+}
+
+.profile h3{
+  font-size: 24px;
+  color: var(--darkBlue);
+}
+
+
+
+/******************************************footer**********************************************/
+
+
+
+/*************************************************media screen ************************************************************************/
+
+@media screen and (min-width: 767px) {
+  
+    #presentation {
+        padding: 100px 50px 10px;
+        text-align: left;
+      }
+    
+      #presentation h1 {
+        width: 45%;
+        font-size: 3rem;
+        padding-left: 15px;
+      }
+    
+      #presentation img {
+        display: block;
+        width: 42%;
+        position: absolute;
+        right: 50px;
+        margin-top: -60px;
+        box-shadow: 1px 2px 5px #0aaff5;
+      }
+      #presentation p {
+        width: 45%;
+        font-size: 1.5rem;
+        margin-top: 40px;
+        /* margin-left:-500px; */
+        -webkit-margin-top: 50px;
+      }
+    
+      #presentation a {
+        display: inline-block;
+      }
+  #show {
+    font-size: 1.75rem;
+  }
+
+  /* main {
+  		max-width: 500px;
+  	} */
+
+  #homePage {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* -webkit-justify-content: space-between; */
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 80%;
+  }
+  #homePage h2 {
+    flex-basis: 100%;
+    padding-left: 15px;
+  }
+  #homePage article {
+    flex-basis: 45%;
+    margin: 50px 10px !important;
+  }
+
+  /* #post button {
+    margin: 10px 45px;
+  } */
+
+ #post, #comments{
+	width:70%;
+  }
+
+  #comments h2 {
+    font-size: 2rem;
+    text-indent: 20px;
+  }
+
+  #comments article .fas {
+    right: 10px;
+  } 
+
+  
+
+  .editMessage{
+	width:50%;
+  }
+
+  
+
+  .write{
+    width:50%;
+  }
+  #panel{
+    width: 50%;
+  }
+
+  .tools{
+    margin-top: 150px;
+  }
+
+  .tools table {
+    width: 70%;
+  }
+
+  /* .tools button {
+    font-size: 1.6rem;
+  } */
+
+  
+}
+
+@media screen and (min-width: 1024px) {
+  
+  #presentation h1 {
+    font-size: 4.5rem;
+    /* line-height: 6rem; */
+  }
+
+  #presentation p {
+    /* margin-top: 200px; */
+    width: 50%;
+    font-size: 2.2rem;
+    opacity: 1;
+    padding: 0;
+  }
+  #presentation img {
+    margin-top: -110px;
+  }
+
+  #homePage{
+    width:90%;
+  }
+  #homePage article {
+    flex-basis: 30%;
+    margin: 50px 20px !important;
+  }
+
+  .editMessage {
+    max-width: 35%;
+  } 
+
+  #comments {
+    max-width: 50%;
+  }
+   
+  #post {
+	width: 50%;
+  }
+  
+
+  #post p {
+    font-size: 1.6rem;
+  }
+
+  #post span {
+    font-size: 1.6rem;
+  }
+
+
+  .write{
+    width:30%;
+  }
+
+  
+  .error img {
+    width: 300px;
+  }
+
+  #resume {
+    width: 60%;
+  }
+
+  #resume video {
+    width: 95%;
+  }
+  .tools table {
+    width: 40%;
+  }
+  #panel{
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  #presentation img {
+    height: 300px;
+  }
+}
+
