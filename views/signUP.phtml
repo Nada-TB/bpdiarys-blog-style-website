@@ -1,27 +1,28 @@
-<div id="signUP">
-	<?php if($checkUserStatusConnected ): ?>
-		<p id="connected">Hi folk! You are already connected </p>
-	<?php else : ?>
-		<div id="formSignIn">
-            <?php if (isset($_GET['success']) && htmlspecialchars($_GET['success']) === "success"): ?>
+<div class="forms-style">
+    <?php if (isset($_GET['error']) && htmlspecialchars($_GET['error'] === "exist")): ?>
+        <p id="errorForm">This email address already exists. If you have an account and forgot your password, please click the link below.</p>
+        <a href="index.php?action=forgottenPassword" class="tertiary-btn">
+            Forgot your password? Click here to reset it and regain access!
+        </a>
+        <?php elseif (isset($_GET['success']) && htmlspecialchars($_GET['success']) === "success"): ?>
                 <p id="errorForm">Congratulations! You are registered. You can now log in.</p>
-                <a href="index.php?action=login"><button id="log">Log IN</button></a>
-            <?php elseif (isset($_GET['error'])): ?>
+                <a href="index.php?action=login" class="secondary-btn"><button>Log in</button> </a>
+    <?php else : ?>
+        
+        <div id="formSignIn">
+            
+            <?php if (isset($_GET['error'])): ?>
                 <?php switch (htmlspecialchars($_GET['error'])):
                     case "errorfield": ?>
                         <p id="errorForm">Sorry, your registration failed! Please fill in all fields correctly.</p>
                     <?php break;
-                    case "exist": ?>
-                        <p id="errorForm">This email address already exists. If you have an account and forgot your password, please click the link below.</p>
-						<a href="index.php?action=login"><button id="log">Log IN</button></a>
-                    <?php break;
-                    case "mismatchPassword":?>
+                    case "mismatchPassword": ?>
                         <p id="errorForm">Your password and confirmation do not match. Please verify that both entries are identical and try again.</p>
                     <?php break;
-                    case 'invalidName':?>
+                    case 'invalidName': ?>
                         <p id="errorForm">Name should be 3 to 50 letters long and contain only letters and spaces.</p>
                     <?php break;
-                    case 'invalidEmail':?>
+                    case 'invalidEmail': ?>
                         <p id="errorForm">Invalid email address.</p>
                     <?php break;
                     default: ?>
@@ -29,26 +30,23 @@
                 <?php endswitch; ?>
             <?php endif; ?>
             <p>Unlock the full experience! Sign up now to bookmark your favorite articles, and discover even more tailored content just for you.</p>
-			<form action="index.php?action=signUp" method="post">
-                
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <form action="index.php?action=signUp" method="post">
+                <label for="">Name:</label>
                 <span id="errorName" class="errorRegister"></span>
-
-                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="text" name="name" id="name" placeholder="Your Name">
+                <label for="">Email:</label>
                 <span id="errorMail" class="errorRegister"></span>
-
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <label for="">Password:</label>
                 <span id="errorPassword" class="errorRegister"></span>
-
-                <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirm Password" required>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <label for="">Confirm your password:</label>
                 <span id="errorPasswordConfirm" class="errorRegister"></span>
+                <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirm Password">
 
-                <input type="submit" name="submit" value="Submit" class="primary-btn">
+
+                <input type="submit" value="Submit" class="primary-btn">
             </form>
-		</div>
-	<?php endif;?>
+        </div>
+    <?php endif; ?>
 </div>
-
-
-
-

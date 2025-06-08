@@ -91,10 +91,3 @@ try {
 	exit;
 }
 
-//$isValid = true;
-		//$url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$_POST['g-recaptcha-response'];
-		// $verify = json_decode(file_get_contents($url));
-		// if (!$verify->success) {
-		// $isValid = false;
-		// 	$action = "reCAPTCHA verification failed.";
-		// }

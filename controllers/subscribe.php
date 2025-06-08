@@ -20,12 +20,12 @@ $description = "You may randomly come across the budding programmer diary's. You
 // Validate and sanitize email
 try {
     // Check if email is provided and valid
-    if (empty($_POST['newsletter']) || !filter_var($_POST["newsletter"], FILTER_VALIDATE_EMAIL)) {
+    if (empty($_POST['newsletterEmail']) || !filter_var($_POST["newsletterEmail"], FILTER_VALIDATE_EMAIL)) {
         $title = "Invalid Mail";
         $message = "Sorry, your mail is invalid";    
     } else {
         // Sanitize the input email
-        $input_email = sanitize_input($_POST['newsletter']);
+        $input_email = sanitize_input($_POST['newsletterEmail']);
         
        //execute statement to check if email exist
         $checkEmail->execute([$input_email]);

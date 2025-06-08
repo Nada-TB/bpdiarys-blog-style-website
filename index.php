@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+$allowedPages = ['home', 'bio', 'contact', 'favorite', 'profile', 'login', 'logout', 'register'];
+$currentPage = in_array($_GET['action'] ?? 'home', $allowedPages, true)
+    ? $_GET['action']
+    : 'home';
+
+
+
 // Define a whitelist of valid actions
 $validActions = [
     'home', 'bio', 'contact', 'subscribe', 'login','register', 'signIn', 'signUp', 'logout', 'article',

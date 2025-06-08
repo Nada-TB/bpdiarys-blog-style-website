@@ -5,14 +5,14 @@
 <form action="index.php?action=writeArticle" method="post" enctype="multipart/form-data" onsubmit="return validationFormEdition()">
 	<?php if (array_key_exists('error', $_GET)) : ?>
 		<?php if (htmlspecialchars($_GET['error']) === "writePostError") : ?>
-			<p id="actionComment">Failed to insert article.</p>
+			<p class="actionComment">Failed to insert article.</p>
 		<?php elseif (htmlspecialchars($_GET['error']) === "errorForm") : ?>
-			<p id="actionComment">Oops! It seems like there are some mistakes in your post. Please double-check all the details and submit again.
+			<p class="actionComment">Oops! It seems like there are some mistakes in your post. Please double-check all the details and submit again.
 			</p>
 		<?php endif; ?>
 	<?php endif; ?>
 	<?php if (array_key_exists('success', $_GET) && htmlspecialchars($_GET['success']) === 'success') : ?>
-		<p id="actionComment">Congratulations! Your article has been successfully published.</p>
+		<p class="actionComment">Congratulations! Your article has been successfully published.</p>
 	<?php endif; ?>
 	<input type="text" name="title" id="title" placeholder="Title" value="">
 	<span id="errorTitle" class="errorRegister"></span>

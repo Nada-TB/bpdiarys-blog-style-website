@@ -1,6 +1,6 @@
 <div class="profile">
 	<h3>Welcome to your profile! What would you like to do today?</h3>
-	<a href="index.php?action=editProfile"><button>edit profile<i class="far fa-edit"></i></button></a>
+	<a href="index.php?action=editProfile" <?= $currentPage === 'editProfile' ? 'class="active" aria-current="page"' : '' ?>><button>edit profile<i class="far fa-edit"></i></button></a>
 	<a href="index.php?action=deleteProfile"><button>Delete Profile<i class="fas fa-trash-alt"></i></button></a>	
 </div>
 

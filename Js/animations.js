@@ -12,14 +12,10 @@ import {
   overlayDiv,
   socialMedia,
   image,
-  footer
+  footer,
+  commentSection
 } from "./domElements.js";
 
-function animateHeroMessageOnload() {
-  subscribeButton.style.right = "5%";
-  document.querySelector("h1").style.left = "5%";
-  document.querySelector("#presentation p").style.marginLeft = "15px";
-}
 
 function showSocialMediaList() {
   socialMediaList.style.display = "block";
@@ -90,19 +86,6 @@ function closePopup() {
   }
 }
 
-function animateImage() {
-  if (document.title == "who I Am") {
-    var start = 0;
-    var move = setInterval(function () {
-      start++;
-      image.style.transform = "rotate(" + start + "deg)";
-
-      if (start == 360) {
-        clearInterval(move);
-      }
-    }, 2);
-  }
-}
 
 function showformSignIn() {
   if (document.getElementById("formSignIn").style.display == "none") {
@@ -130,6 +113,11 @@ function autorisationSaveArticle() {
   "Sign up now to effortlessly bookmark and enjoy your favorite articles at your convenience! <a href='index.php?action=register'><button>Sign up</button></a>";
 }
 
+function autorisationToComment (){
+  commentSection.style.display="none";
+  popup.style.display="block";
+  document.querySelector("#popup p").innerHTML="you should register";
+}
 function footerVisibility(){
   let footerCoordinate= footer.getBoundingClientRect();
   let windowHeight=window.innerHeight;
@@ -142,7 +130,6 @@ function footerVisibility(){
   }
 }
 export {
-  animateHeroMessageOnload,
   showSocialMediaList,
   hideSocialMediaList,
   scrollFunction,
@@ -152,9 +139,9 @@ export {
   showSousMenu,
   hideSousMenu,
   closePopup,
-  animateImage,
   showformSignIn,
   showLogin,
   autorisationSaveArticle,
+  autorisationToComment,
   footerVisibility
 };

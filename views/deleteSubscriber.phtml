@@ -1,19 +1,23 @@
-<div id="signUP">
-	<?php if(!array_key_exists('comment', $_GET)):?>	
-		<form method="post" action="index.php?action=<?php echo'deleteSubscriber';?>" onsubmit=" return validateMail()">
+<div class="forms-style">
+	<?php if(array_key_exists('comment', $_GET) && htmlspecialchars($_GET['comment'])==="invalidEmail") :?>
+		<p class="actionComment">Your entered an invalid Email ! </p>
+	<?php endif; ?>
+	<?php if(!array_key_exists('comment', $_GET) || $_GET['comment']==="invalidEmail" ): ?>
+		<form method="post" action="index.php?action=deleteSubscriber" id="unsubscribeForm">
 			<legend>Please enter your email to unsubscribe</legend>
-			<input type="email" name="mail" id="mail" placeholder="mail">
-			<span id="errorMail" class="errorRegister"></span>
-			<input type="submit" name="submit" id="submit" value="Delete" >
+			<span id="errorMailSubscriber" class="errorRegister"></span>
+			<input type="email" name="email" id="email"  placeholder="mail" required>
+			<input type="submit"  value="Delete" class="primary-btn" >
 		</form>	
 </div>
 
 <div>
-	<?php elseif(array_key_exists('comment', $_GET) && htmlspecialchars($_GET['comment'])=="inexistent") :?>
-		<p id="actionComment"> this email doesn't exist in the subscriber's list</p>
-		<a href="index.php?action=home"><button>home page</button></a>
+	<?php elseif(array_key_exists('comment', $_GET) && htmlspecialchars($_GET['comment'])==="inexistent") :?>
+		<p class="actionComment"> this email doesn't exist in the subscriber's list</p>
+		<a href="index.php?action=home" class='secondary-btn'><button >home page</button></a>
 
-	<?php elseif(array_key_exists('comment', $_GET) && htmlspecialchars($_GET['comment'])=="success") :?>
-		<p id="actionComment">Your mail has been removed successfully from our list. We are going to miss you &#128546; </p>
+	<?php elseif(array_key_exists('comment', $_GET) && htmlspecialchars($_GET['comment'])==="success") :?>
+		<p class="actionComment">Your mail has been removed successfully from our list. We are going to miss you &#128546; </p>
+
 	<?php endif;?>
 </div>

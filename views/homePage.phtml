@@ -1,28 +1,28 @@
 <div id="presentation">
-    <h1>Be a programmer diary {y..}s</h1>
+    <h1>Be a programmer diary <span> {y..}s </span></h1>
     <img src="css/images/presentation3.jpg" alt="" srcset="">
-    <p> <span>A blog </span>where I, Nada, share my unconventional journey into coding. Along the way, I’ll offer insights and personal reflections in the form of episodes. Fasten your seatbelts—it's going to be an exciting ride!  😊</p>
+    <p> <span class="important-word">A blog </span>where I, Nada, share my unconventional journey into coding. Along the way, I’ll offer insights and personal reflections in the form of episodes. Fasten your seatbelts, it's going to be an exciting ride! 😊</p>
     <a href="#homePage"><button class="primary-btn">Discover episodes</button></a>
     <a href="index.php?action=bio"><button class="secondary-btn">who Am I ?</button></a>
-       
+
     </p>
     <p></p>
 </div>
 <div id="homePage">
-    <h2>Blog episodes:</h2>
-<?php
-// Check if $articles is defined and is an array
-if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
-    <div class="error">
-        <p>The budding programmer diary is coming soon, stay connected!</p>
-        <img src="css/images/bpdMan.png" alt="the bpdiarys man">
-    </div>
-<?php else : ?>
-    
+    <h2> // Blog Episodes:</h2>
+    <?php
+    // Check if $articles is defined and is an array
+    if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
+        <div class="error">
+            <p>The budding programmer diary is coming soon, stay connected!</p>
+            <img src="css/images/bpdMan.png" alt="this is a picture of a smiling illustration">
+        </div>
+    <?php else : ?>
+
         <?php foreach ($articles as $article) : ?>
             <?php
             // Sanitize and prepare variables for safe output
-            $articleTitle = htmlentities($article['title'], ENT_QUOTES, 'UTF-8');
+            $articleTitle =$article['title'];
             $content = htmlentities(substr($article['content'], 0, 200), ENT_QUOTES, 'UTF-8');
             $timeDate = htmlentities($article['timeDate'], ENT_QUOTES, 'UTF-8');
             $writer = ucwords(htmlentities($article['writer'], ENT_QUOTES, 'UTF-8'));
@@ -31,8 +31,8 @@ if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
             ?>
 
             <article>
-                <h3>&#60;&#47; <?= $articleTitle ?> &#62;</h3>
-                <p class="home1">&#147; <?= $content ?> [...] &#148;</p>
+                <h3>&#60;&#47; <?= htmlspecialchars($articleTitle, ENT_QUOTES, 'UTF-8') ?> &#62;</h3>
+                <p class="home1"><?= $content ?> [...] </p>
                 <p class="home"></p>
                 <span><i class="far fa-clock"></i> <?= $timeDate ?> by <?= ucwords(htmlentities($article['writer'], ENT_QUOTES, 'UTF-8')) ?></span>
                 <a href="index.php?action=article&articleId=<?= urlencode($articleId)  ?>" title="Click here to show the post"><button class="primary-btn">read more</button></a>
@@ -45,6 +45,6 @@ if (!isset($articles) || !is_array($articles) || count($articles) === 0) : ?>
             </article>
 
         <?php endforeach; ?>
-                  
-    </div>
+
+</div>
 <?php endif; ?>

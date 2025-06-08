@@ -1,6 +1,6 @@
 <?php
 	require_once 'models/utilities.php';
-	require_once'models/MessagesNumber.php';
+	require_once 'models/MessagesNumber.php';
     require_once 'models/ModelSubscribe.php';
 
 
@@ -11,12 +11,13 @@
 		include 'views/layout.phtml';
 
 	}else{
-		if(!empty($_POST['mail'])){
-			$response->execute([test_input($_POST['mail'])]);
-			$subscriber=$response->fetch();
-			
-			if(test_input($_POST['mail']) == $subscriber['mail']){
-                $deleteSubscriber->execute([test_input($_POST['mail'])]);
+		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+			$email=sanitize_input($_POST['email']);
+			$checkEmail ->execute([$email]);
+			$subscriber=$checkEmail ->fetch();
+		
+			if($email === $subscriber['mail']){
+                $deleteSubscriber->execute([$email]);
 
 				header('location:index.php?action=deleteSubscriber&&comment=success');
 				exit();
@@ -26,5 +27,8 @@
 				exit();
 			}
 
+		}else{
+			header('location:index.php?action=deleteSubscriber&&comment=invalidEmail');
+			exit();
 		}
 	}

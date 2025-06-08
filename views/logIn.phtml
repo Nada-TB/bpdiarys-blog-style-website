@@ -1,8 +1,8 @@
-<div id="signUP">
+<div  class="forms-style">
 
-	<?php if (isset($_SESSION['connected']) && $_SESSION['connected'] === "connected") : ?>
+	<!-- <?php if (isset($_SESSION['connected']) && $_SESSION['connected'] === "connected") : ?>
 		<p id="connected">Hi folk! You are already connected </p>
-	<?php else : ?>
+	<?php else : ?> -->
 		<div id="formLogin">
 			<?php if (isset($_GET['error'])) : ?>
 				<p id="errorForm">
@@ -21,20 +21,23 @@
 				</p>
 			<?php endif; ?>
 			<p>Already have an account? Log in with your email address and password to pick up where you left off!</p>
-			<form method="post" action="index.php?action=signIn" onsubmit=" return login()">
-				<input type="email" name="email" id="mail" placeholder="Email" required>
+			<form method="post" action="index.php?action=signIn" >
+				<label for="email">Email:</label>
+				<span id="errorEmail" class="errorRegister"></span>
+				<input type="email" name="email" id="mail" placeholder="Email" required >
+				<label for="">Password:</label>
+				<span id="errorPassword" class="errorRegister"></span>
 				<input type="password" name="password" id="password" placeholder="Password" required>
-				<input type="submit" name="submit" id="submit" value="Login " class="primary-btn">
+				<input type="submit" value="Login " class="primary-btn">
 			</form>
-			<div>
-				
-				<a href="index.php?action=register">
+			
+			<a href="index.php?action=forgottenPassword" class="tertiary-btn">
+				Forgot your password? Click here to reset it and regain access!
+			</a>
+
+			<a href="index.php?action=register" class="tertiary-btn">
 					<!-- <button id="register" class="secondary-btn">Register</button> -->
-					<p>New here and ready to join the family? Click here to register and get started!</p>
-				</a>
-			</div>
-			<a href="index.php?action=forgottenPassword">
-				<p>Forgot your password? Click here to reset it and regain access!</p>
+					New here and ready to join the family? Click here to register and get started!
 			</a>
 
 

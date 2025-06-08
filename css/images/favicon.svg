@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Tile 1: B (blue) -->
+  <rect x="0" y="0" width="90" height="90" fill="#3e627a" rx="5"></rect>
+  <text x="45" y="55" font-size="36" text-anchor="middle" fill="black" font-family="Arial, sans-serif">B</text>
+
+  <!-- Tile 2: P (yellow with blue border) -->
+  <rect x="100" y="0" width="90" height="90" fill="#f2cc59" stroke="#3e627a" stroke-width="2" rx="5"></rect>
+  <text x="145" y="55" font-size="36" text-anchor="middle" fill="black" font-family="Arial, sans-serif">P</text>
+
+  <!-- Tile 3: D (yellow with blue border) -->
+  <rect x="0" y="100" width="90" height="90" fill="#f2cc59" stroke="#3e627a" stroke-width="2" rx="5"></rect>
+  <text x="45" y="155" font-size="36" text-anchor="middle" fill="black" font-family="Arial, sans-serif">D</text>
+
+  <!-- Tile 4: Y (blue) -->
+  <rect x="100" y="100" width="90" height="90" fill="#3e627a" rx="5"></rect>
+  <text x="145" y="155" font-size="36" text-anchor="middle" fill="black" font-family="Arial, sans-serif">Y</text>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

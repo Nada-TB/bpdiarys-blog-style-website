@@ -1,29 +1,34 @@
 <?php if (array_key_exists('error', $_GET) && !empty(htmlspecialchars($_GET['error']))) : ?>
 	<?php if (htmlspecialchars($_GET['error']) == 'errorForm') : ?>
-		<p id="actionComment">Your form is invalid, please fill in correctly all fields of the form</p>
+		<p class="actionComment">Your form is invalid, please fill in correctly all fields of the form</p>
 	<?php elseif (htmlspecialchars($_GET['error']) == 'errorPass') : ?>
-		<p id="actionComment"> your old password isn't correct</p>
+		<p class="actionComment"> your old password isn't correct</p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if (array_key_exists('success', $_GET) && htmlspecialchars($_GET['success']) === "success") : ?>
-	<p id="actionComment"> Your profile was successfully updated. </p>
+	<p class="actionComment"> Your profile was successfully updated. </p>
 <?php endif; ?>
 
 
-<section class="write">
+<section class="forms-style">
 	<h3>Keep your profile up to date! Make changes and stay in control</h3>
 	<form method="post" action="index.php?action=profile" id="updateProfile">
-		
-		<input type="text" name="name" id="firstName" value="<?= htmlentities($_SESSION['name']) ?>" title=" your first Name">
+		<label for="">Name: </label>
 		<span id="errorFirstName" class="errorRegister"></span>
-		<input type="email" name="email" id="email" value="" placeholder="enter your email">
+		<input type="text" name="name" id="firstName" value="<?= htmlentities($_SESSION['name']) ?>" title=" your first Name">
+		<label for="">Email:</label>
 		<span id="errorEmail" class="errorRegister"></span>
-		<input type="password" name="oldPassword" id="passOld" placeholder=" your current password">
+		<input type="email" name="email" id="emailProfile" value="" placeholder="enter your email">
+		<label for="">Password:</label>
 		<span id="errorOldPassword" class="errorRegister"></span>
-		<input type="password" name="newPassword" id="password" placeholder="your new password">
+		<input type="password" name="oldPassword" id="passOld" placeholder=" your current password">
+		<label for="">Your new password:</label>
 		<span id="errorNewPassword" class="errorRegister"></span>
-		<input type="password" name="passwordConfirm" id="passConfirm" placeholder="confirm your new password">
+		<input type="password" name="newPassword" id="password" placeholder="your new password">
+		<label for="">Confirm your new password:</label>
 		<span id="errorNewPasswordC" class="errorRegister"></span>
+		<input type="password" name="passwordConfirm" id="passConfirm" placeholder="confirm your new password">
+		
 		<button type="submit" class="primary-btn">submit</button>
 	</form>
 	<a href="index.php?action=profile" class="tertiary-btn">Back to My Profile</a>

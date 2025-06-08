@@ -1,7 +1,7 @@
 <?php
 
-	require_once'models/utilities.php';
-	require_once'models/ModelResetPassword.php';
+	require_once 'models/utilities.php';
+	require_once 'models/ModelResetPassword.php';
 	require_once 'models/ModelSignIn.php';
 
 	if($_SERVER['REQUEST_METHOD']!== "POST"){
@@ -11,20 +11,32 @@
 		include 'views/layout.phtml';
 
 	}else{
-		if(!empty($_POST['mail']) && !empty($_POST['pass'])&& !empty($_POST['passConfirm'])){
-			$getMember->execute([test_input($_POST['mail'])]);
+		$email= sanitize_input($_POST['email']);
+		$password=sanitize_input($_POST['password']);
+		$passwordConfirmation=sanitize_input($_POST['passConfirm']);
+		if(!empty($email) && !empty($password)&& !empty($passwordConfirmation)){
+			$getMember->execute([$email]);
 			$member=$getMember->fetch();
-
-			if(test_input($_POST['mail']) == $member['email']){
-				$updatePassword->execute([password_hash($_POST['pass'], PASSWORD_DEFAULT), password_hash($_POST['passConfirm'], PASSWORD_DEFAULT),test_input($_POST['mail'])]);
-				header('location:index.php?action=resetPassword&&comment=success');
-				exit();
-
+			if($member){
+				if($email === $member['email']){
+					$updatePassword->execute([password_hash($password, PASSWORD_DEFAULT), password_hash($passwordConfirmation, PASSWORD_DEFAULT),$email]);
+					header('location:index.php?action=resetPassword&&comment=success');
+					exit();
+	
+				}else{
+	
+					header('location:index.php?action=resetPassword&&comment=errorMail');
+					exit();
+				}
 			}else{
-
 				header('location:index.php?action=forgottenPassword&&comment=inexistent');
 				exit();
 			}
-		}
+	
 
+		}else{
+			header('location:index.php?action=resetPassword&&comment=emptyForm');
+			exit();
+		}
+			
 	}

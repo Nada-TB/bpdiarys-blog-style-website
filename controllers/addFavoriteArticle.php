@@ -14,13 +14,14 @@ if ($addFavoritePermission) {
 
 	if ($condition) {
 		$url = "index.php?action=article&&articleId=" . intval($_GET['favoriteId']);
-		$id = intval($_SESSION['id']);
+		$id_user = intval($_SESSION['id']);
 		$title = sanitize_input($_GET['title']);
-		$checkUrlExists->execute([$url, $id]);
+		$article_Id=intval($_GET['favoriteId']);
+		$checkUrlExists->execute([$article_Id, $id_user]);
 		$result = $checkUrlExists->fetch(PDO::FETCH_ASSOC);
 
-		if ($result['count'] === 0) {
-			$insert_FavoriteArticle->execute([$title, $url, $id]);
+		if ($result['count'] == 0) {
+			$insert_FavoriteArticle->execute([$title, $url, $id_user, $article_Id]);
 			header('location:index.php?action=favorite');
 			exit();
 		} else {

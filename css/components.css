@@ -1,7 +1,7 @@
 #socialMedia,
 #popup {
   position: fixed;
-  background-color: #3e627a;
+  background-color:var(--darkBlue);
   opacity: 0.98;
   width: 100%;
   height: 100%;
@@ -15,23 +15,36 @@
 #socialMedia #socialList {
   list-style-position: inside !important;
   list-style-type: none;
-  padding: 15px;
+  padding: 20px 15px;
   width: 80%;
   display: none;
   position: absolute;
   top: 100px;
   right: 10%;
-  z-index: 8; 
-  opacity: 2 ;
+  z-index: 8;
+  opacity: 2;
   background-color: #f6de94;
   opacity: 1 !important;
   text-align: center;
   border-radius: 40px 20px 40px 20px;
 }
 
+#socialList form {
+  flex-direction: column;
+  align-items: stretch;
+  width:fit-content;
+  margin: 0 auto 20px;
+}
+
+#socialList button {
+ width: 100px;
+ align-self: center;
+ margin-top: 15px;
+}
+
 #socialMedia #closebtn {
   position: absolute;
-  top: 0;
+  top: 25px;
   right: 25px;
   font-size: 5rem;
   margin-left: 50px;
@@ -42,7 +55,7 @@
 
 #popup #closepopup {
   position: absolute;
-  top: 0;
+  top: 25px;
   right: 25px;
   font-size: 5rem;
   margin-left: 50px;
@@ -61,24 +74,42 @@
   color: #f6de94;
 }
 
-#show {
-  border-radius: 30% 10% 30% 10%;
-  padding: 10px;
+#showSubscribeForm {
+  border-radius: 50%;
+  width: 90px;
+  padding: 24px 0;
   background-color: #f2cc59;
   outline: none;
-  border: 1px solid #3e627a;
-  box-shadow: 1px 1px 15px #9999;
+  border: 2px solid #3e627a;
+  box-shadow: 1px 3px 15px rgba(153, 153, 153, 0.6);
   color: #3e627a;
-  font-family: "Knewave", cursive;
-  font-size: 1.5rem;
+  font-family: var(--fontNoto);
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   position: fixed;
-  right: -100%;
+  z-index: 8;
+  right: 3%;
   bottom: 3%;
   transition: 2s ease-in-out;
 }
-
+.fa-bell {
+  display: block;
+  padding: 5px;
+  transition: transform 4s fade;
+  animation: turn-around 4s ease-in-out infinite;
+}
+@keyframes turn-around {
+  0% {
+    transform: rotate(-75deg);
+  }
+  50% {
+    transform: rotate(75deg);
+  }
+  100% {
+    transform: rotate(-75deg);
+  }
+}
 #socialList li {
   padding: 5px;
 }
@@ -93,15 +124,17 @@
   padding: 14px;
   border-radius: 8px;
   border: 1px solid #3e627a;
-  font-size: 12px; 
+  font-size: 16px;
 }
 
-#socialList h3 {
+#socialList > li:first-child {
   text-transform: capitalize;
   color: #3e627a;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 2;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 #show:hover {
@@ -153,106 +186,120 @@
   right: 0;
 }
 #popup p {
-    position: absolute;
-    font-size: 16px;
-    background-color: #f2cc59;
-    opacity: 2;
-    top: 100px;
-    left: 10%;
-    right: 10%;
+  position: absolute;
+  font-size: 16px;
+  background-color: #f2cc59;
+  opacity: 2;
+  top: 100px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  text-align: center;
+  color: #3e627a;
+  padding: 50px 20px;
+  border-radius: 40px 20px 40px 20px;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  line-height: 2;
+}
+
+#popup p a {
+  display: block;
+}
+
+input {
+  border-radius: 8px;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+  background-color: var(--lightBlue);
+  width: 200px;
+  font-size: 16px;
+}
+
+input:focus {
+  border: 1px solid #6fb7d7;
+  outline: none;
+}
+
+input[type="submit"],
+button {
+  color: #3e627a;
+  border: 1px solid #3e627a;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 30px 50px 30px 50px;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 1px 1px 20px #9999;
+  margin: 20px 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.actionComment {
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto;
+  font-family: var(--fontText);
+  text-transform: uppercase;
+  font-size: 18px;
+  color: var(--red);
+  width: 100%;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 767px) {
+  #socialList >li:first-child {
+    font-size: 20px;
+  }
+
+  #socialList form {
+    flex-direction: row;
+    width: fit-content;
+    padding: 0;
+    align-items: center;
+    margin : 0 auto 20px;
+  }
+ 
+  #socialList  form button {
+    margin: 0;
+  }
+
+  #socialList  form span {
+    text-align: left;
+    flex-basis: 100%;
+    width:0;
+    min-width: 100%;
+    
+  }
+
+  #socialMedia #socialList {
     width: 80%;
-    text-align: center;
-    color: #3e627a;
-    padding: 50px 20px;
-    border-radius: 40px 20px 40px 20px;
-    text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    line-height: 2;
-  }
-  
-  #popup p a {
-    display: block;
+    right: 10%;
+    padding: 20px 30px;
   }
 
-  input {
-    border-radius: 8px;
-    font-family: "Open Sans", sans-serif;
-    outline: none;
-    text-align: center !important;
-    background-color: var(--lightBlue);
+  #popup p {
+    font-size: 1.6rem;
+    width: 50%;
+    right: 25%;
+    left: 25%;
   }
-  
-  input[type="text"], input[type="email"], input[type="password"] {
-    width: 210px;
-    box-sizing: border-box;
-  }
-  
-  input:focus {
-    border: 1px solid #6fb7d7;
-    outline: none;
-  }
-  
-   input[type="submit"],button {
-    /* background-color: #F5D67A; */
-    color: #3e627a;
-    border: 1px solid #3e627a;
-    font-size: 16px;
-    padding: 12px;
-    border-radius: 30px 50px 30px 50px;
-    font-weight: bold;
-    outline: none;
-    box-shadow: 1px 1px 20px #9999;
-    margin: 20px 5px;
-    cursor: pointer;
-    text-transform: capitalize;
+}
+
+@media screen and (min-width: 1024px) {
+  #socialMedia #socialList {
+    width: 60%;
+    right: 20%;
   }
 
-  #actionComment {
-    text-align: center;
-    padding: 10px;
-    margin: 20px auto;
-    font-family: var(--fontText);
-    text-transform: uppercase;
-    font-size: 18px;
-    color:var(--red);
-    width: 100%;
-    font-weight: bold;
-  }
-  
-
-  @media screen and (min-width: 767px){
-    #socialList input {
-        width: 50%;
-      }
-    
-      #socialList h3 {
-        font-size: 1.5rem;
-      }
-    
-      #socialMedia #socialList {
-        width: 60%;
-        right: 20%;
-      }
-
-      #popup p {
-        font-size: 1.6rem;
-        width: 50%;
-        right: 25%;
-        left: 25%;
-      }
+  #popup p {
+    font-size: 2rem;
   }
 
-  @media screen and (min-width: 1024px){
-    #socialMedia #socialList {
-        max-width: 30%;
-        right: 35%;
-      }
-      #popup p {
-        font-size: 2rem;
-      }
-
-      #actionComment {
-        margin-left: 10px;
-      }
+  .actionComment {
+    margin-left: 10px;
   }
+}

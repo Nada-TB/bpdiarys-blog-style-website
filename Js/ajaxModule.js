@@ -1,4 +1,4 @@
-import { popup } from "./domElements";
+import { popup, commentSection } from "./domElements";
 
 
 function getComment() {
@@ -10,9 +10,9 @@ function getComment() {
         let statusConnection = status;
   
         if (statusConnection === "connected") {
-          document.getElementById("commentForm").style.display = "block";
+          commentSection.style.display = "block";
         } else if (statusConnection === "not connected") {
-          document.getElementById("commentForm").style.display = "none";
+          commentSection.style.display = "none";
           popup.style.display = "block";
           document.querySelector("#popup p").innerHTML =
             "you should register to comment article";
