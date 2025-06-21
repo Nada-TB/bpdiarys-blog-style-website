@@ -29,8 +29,6 @@ Bdiarys is a personal blog that chronicles my transition into the world of web d
 
 Check out the live demo [here](https://bpdiarys.com/).
 
-### Screenshots
-screenshots are available [here](https://github.com/Nada-TB/bpdiarys-blog-style-website/tree/main/screenshoot_bpdiarys)
 
 ### sitemap
 ``` plain text
