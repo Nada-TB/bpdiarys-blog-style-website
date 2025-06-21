@@ -391,7 +391,8 @@ bdiarys/
   **Action:** Created the database structure and tested SQL queries using PHPMyAdmin.  
   **Result:**  Efficiently managed data storage and retrieval, ensuring accurate and secure handling of user-generated content.
    - Prevented XSS attacks by securely processing and displaying user inputs.
-- **Challenge:**:Frontend Development
+- **Challenge:**
+  :Frontend Development
      **Action:**:- Implemented a responsive user interface using HTML, CSS, and JavaScript.
                   - Applied a consistent color theme for the entire site.
      **Result:**: Created a user-friendly and responsive interface that provides a seamless experience across devices, attracting more visitors.
